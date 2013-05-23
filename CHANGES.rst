@@ -2,7 +2,7 @@
 CHANGES
 =======
 
-0.1.0 (unreleased)
+0.1.0 (2013-05-23)
 ------------------
 
 - Initial release.
