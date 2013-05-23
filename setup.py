@@ -21,7 +21,7 @@ def read(*rnames):
 
 setup(
     name='zopache.pythonscript',
-    version='0.1.0',
+    version='0.1.1.dev0',
     url='http://pypi.python.org/pypi/zopache.pythonscript',
     author='Christopher Lozinski',
     author_email='lozinski@freerecruiting.com',
