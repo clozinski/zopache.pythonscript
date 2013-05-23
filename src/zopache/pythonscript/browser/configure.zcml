@@ -1,0 +1,36 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    >
+
+  <browser:addMenuItem
+      class="zopache.pythonscript.pythonscript.PythonScript"
+      title="Python Script"
+      description="A simple, content-based Python Script"
+      permission="zope.ManageContent"
+      view="zopache.pythonscript.PythonScript"
+      />
+
+  <browser:addform
+      schema="zopache.pythonscript.interfaces.IPythonScript"
+      label="Add a Python Script"
+      content_factory="zopache.pythonscript.pythonscript.PythonScript"
+      name="zopache.pythonscript.PythonScript"
+      permission="zope.ManageContent"
+      />
+
+  <browser:page
+      for="zopache.pythonscript.interfaces.IPythonScript"
+      name="edit.html"
+      class=".pythonscript.EditForm"
+      permission="zope.ManageContent"
+      menu="zmi_views" title="Edit"
+      />
+
+  <browser:icon
+      name="zmi_icon"
+      for="zopache.pythonscript.interfaces.IPythonScript"
+      file="pyscript.gif"
+      />
+
+</configure>

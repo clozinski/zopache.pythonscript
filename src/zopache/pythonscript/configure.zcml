@@ -1,0 +1,40 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="zope"
+    >
+
+  <interface
+      interface=".interfaces.IPythonScript"
+      type="zope.app.content.interfaces.IContentType"
+      />
+
+  <class class=".pythonscript.PythonScript">
+    <implements
+        interface="zope.annotation.interfaces.IAttributeAnnotatable"
+        />
+    <factory
+        id="zopache.PythonScript"
+        title="Python Script/Function"
+        description="A simple, content-based Python Script"
+        />
+    <require
+        permission="zope.View"
+        interface=".interfaces.IPythonScript"
+        />
+    <require
+        permission="zope.ManageContent"
+        set_schema=".interfaces.IPythonScript"
+        />
+  </class>
+
+  <adapter
+      for=".interfaces.IPythonScript"
+      provides="zope.size.interfaces.ISized"
+      factory=".pythonscript.Sized"
+      trusted="y"
+      permission="zope.ManageContent"
+      />
+
+  <include package=".browser" />
+
+</configure>
